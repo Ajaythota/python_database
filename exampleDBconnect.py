@@ -43,13 +43,19 @@ class Database:
         print("i'm in Delete")
         DB.Read(table)
 
+    def Close(self):
+        self.connection.close()
+        print("DB connection closed")
+
+
 
 if __name__ =="__main__":
     DB=Database()
-    #DB.Read("emp")
+    DB.Read("emp")
     #DB.Create("emp")
    # DB.Update("emp","Old","New")
-    DB.Delete("emp","New")
+    #DB.Delete("emp","New")
+    DB.Close()
 # connection=sqlite3.connect("database\\data2.db")
 # cursor=connection.cursor()
 #
